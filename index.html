@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>아이스크림 먹고싶다</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+
+  <style type="text/css">
+    body{margin: 0; background-color: lightpink;}
+
+    .titleText{font-size: 3em; text-align: center; font-family: 'Carter One', cursive;
+              color: royalblue;}
+
+    .timerText{font-size: 1.5em; text-align: center; font-family: 'Carter One', cursive;
+              padding-top: 10px; color: white;}
+
+
+
+    //ice cream
+
+    .mint{width: 170px;
+      position: absolute; top: 70px;
+      content: url("mint.png");}
+
+    .green{width: 170px;
+      position: absolute; top: 70px;
+      content: url("green.png");}
+
+    .cherry{width: 170px;
+      position: absolute; top: 70px;
+      content: url("cherry.png");}
+
+    .mint2{width: 170px;
+      position: absolute; top: 70px;
+      content: url("mint.png");}
+
+    .alien{width: 170px;
+      position: absolute; top: 70px;
+      content: url("alien.png");}
+
+    .rainbow{width: 170px;
+      position: absolute; top: 70px;
+      content: url("rainbow.png");}
+
+    .candy{width: 170px;
+      position: absolute; top: 70px;
+      content: url("candy.png");}
+
+  </style>
+
+</head>
+<body>
+  <div>
+    <div class="timerText" id="timer">finish</div>
+    <div class="titleText" id="title">Fill the screen with ice cream!</div>
+  </div>
+
+
+  <script type="text/javascript">
+
+    setTimeout(result,31000)
+    var time = 31;
+    var min = "1";
+    var sec = "60";
+
+    var x = setInterval(function(){
+      min = parseInt(time / 60);
+      sec = time % 60;
+
+      document.getElementById("timer").innerHTML = min + ":" + sec; time--;
+
+      if(time < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "finish";
+      }
+    }, 1000);
+
+
+    
+
+    var score = 0;
+    
+    function result(){
+      alert("Clicked " + score + " times!" );
+    }
+
+
+
+
+    makeBox(); //호출
+
+    function makeBox()
+    {
+      var a1 = document.createElement("div1");
+      a1.id = "ice1";
+      a1.className = "mint";
+      var b1 = Math.random()*window.innerWidth;
+      var c1 = Math.random()*window.innerHeight;
+      a1.style.left = b1 + "px";
+      a1.style.top = c1 + "px";
+
+      a1.onclick = function(){
+        a1.parentNode.removeChild(a1);
+        makeBox();
+        if(b1 < 0) b1=0;
+        if(c1 < 0) c1=0;
+        score+=1;
+      }
+      document.body.appendChild(a1);
+
+
+      var a2 = document.createElement("div2");
+        a2.id = "ice2";
+        a2.className = "green";
+        var b2 = Math.random()*window.innerWidth;
+        var c2 = Math.random()*window.innerHeight;
+        a2.style.left = b2 + "px";
+        a2.style.top = c2 + "px";
+
+        a2.onclick = function(){
+          a2.parentNode.removeChild(a2);
+          makeBox();
+          if(b2 < 0) b2=0;
+          if(c2 < 0) c2=0;
+          score+=1;
+        }
+        document.body.appendChild(a2);
+
+
+      var a3 = document.createElement("div3");
+        a3.id = "ice3";
+        a3.className = "cherry";
+        var b3 = Math.random()*window.innerWidth;
+        var c3 = Math.random()*window.innerHeight;
+        a3.style.left = b3 + "px";
+        a3.style.top = c3 + "px";
+
+        a3.onclick = function(){
+          a3.parentNode.removeChild(a3);
+          makeBox();
+          if(b3 < 0) b3=0;
+          if(c3 < 0) c3=0;
+          score+=1;
+        }
+        document.body.appendChild(a3);
+
+
+      var a5 = document.createElement("div5");
+        a5.id = "ice5";
+        a5.className = "mint2";
+        var b5 = Math.random()*window.innerWidth;
+        var c5 = Math.random()*window.innerHeight;
+        a5.style.left = b5 + "px";
+        a5.style.top = c5 + "px";
+
+        a5.onclick = function(){
+          a5.parentNode.removeChild(a5);
+          makeBox();
+          if(b5 < 0) b5=0;
+          if(c5 < 0) c5=0;
+          score+=1;
+        }
+        document.body.appendChild(a5);
+
+
+      var a6 = document.createElement("div6");
+        a6.id = "ice6";
+        a6.className = "alien";
+        var b6 = Math.random()*window.innerWidth;
+        var c6 = Math.random()*window.innerHeight;
+        a6.style.left = b6 + "px";
+        a6.style.top = c6 + "px";
+
+        a6.onclick = function(){
+          a6.parentNode.removeChild(a6);
+          makeBox();
+        if(b6 < 0) b6=0;
+        if(c6 < 0) c6=0;
+        score+=1;
+        }
+        document.body.appendChild(a6);
+
+
+      var a7 = document.createElement("div7");
+        a7.id = "ice7";
+        a7.className = "rainbow";
+        var b7 = Math.random()*window.innerWidth;
+        var c7 = Math.random()*window.innerHeight;
+        a7.style.left = b7 + "px";
+        a7.style.top = c7 + "px";
+
+        a7.onclick = function(){
+          a7.parentNode.removeChild(a7);
+          makeBox();
+          if(b7 < 0) b7=0;
+          if(c7 < 0) c7=0;
+          score+=1;
+        }
+        document.body.appendChild(a7);
+
+
+      var a9 = document.createElement("div9");
+        a9.id = "ice9";
+        a9.className = "candy";
+        var b9 = Math.random()*window.innerWidth;
+        var c9 = Math.random()*window.innerHeight;
+        a9.style.left = b9 + "px";
+        a9.style.top = c9 + "px";
+
+        a9.onclick = function(){
+          a9.parentNode.removeChild(a9);
+          makeBox();
+          if(b8 < 0) b8=0;
+          if(c8 < 0) c8=0;
+          score+=1;
+        }
+        document.body.appendChild(a9);
+        
+    }
+
+  </script>
+</body>
+</html>
